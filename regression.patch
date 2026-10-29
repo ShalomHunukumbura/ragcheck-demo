@@ -1,0 +1,11 @@
+--- a/app/run_pipeline.py
++++ b/app/run_pipeline.py
+@@ -15,7 +15,7 @@
+ 
+ TOP_K = 3
+ # Keep only the first sentence of each document, to send the model less text.
+-TRIM_TO_FIRST_SENTENCE = False
++TRIM_TO_FIRST_SENTENCE = True
+ STOPWORDS = {"a", "an", "and", "are", "can", "do", "does", "for", "have", "how", "i", "in",
+              "is", "my", "of", "on", "the", "to", "what", "when", "where", "with", "you"}
+ 
