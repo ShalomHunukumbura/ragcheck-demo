@@ -15,7 +15,7 @@ from pathlib import Path
 
 TOP_K = 3
 # Keep only the first sentence of each document, to send the model less text.
-TRIM_TO_FIRST_SENTENCE = False
+TRIM_TO_FIRST_SENTENCE = True
 STOPWORDS = {"a", "an", "and", "are", "can", "do", "does", "for", "have", "how", "i", "in",
              "is", "my", "of", "on", "the", "to", "what", "when", "where", "with", "you"}
 
