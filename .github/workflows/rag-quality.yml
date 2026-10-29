@@ -1,0 +1,25 @@
+name: RAG quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ShalomHunukumbura/ragcheck@v0
+        with:
+          python-version: "3.12"
+          dataset: eval/questions.jsonl
+          predictions: /tmp/ragcheck-predictions.jsonl
+          command: python app/run_pipeline.py
+          min-answer-pass-rate: "1.0"
+          min-grounded-pass-rate: "1.0"
+          min-retrieval-recall: "1.0"
+          k: "3"
